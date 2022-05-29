@@ -2,6 +2,8 @@ package com.makiasake.reconhecimento_facial;
 
 import static org.junit.Assert.assertTrue;
 
+import org.bytedeco.opencv.opencv_face.EigenFaceRecognizer;
+import org.bytedeco.opencv.opencv_face.FaceRecognizer;
 import org.junit.Test;
 
 /**
@@ -18,4 +20,9 @@ public class AppTest
         assertTrue( true );
     }
     
+    @Test
+    public void createEigenFaceRecognizer()
+    {
+        FaceRecognizer eigenFaceRecognizer = EigenFaceRecognizer.create();
+    }
 }
