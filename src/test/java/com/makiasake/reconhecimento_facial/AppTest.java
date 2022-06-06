@@ -7,7 +7,6 @@ import org.bytedeco.opencv.opencv_face.FaceRecognizer;
 import org.junit.Test;
 
 import com.makiasake.reconhecimento_facial.reconhecimento.Captura;
-import org.bytedeco.javacv.FrameGrabber.Exception;
 
 /**
  * Unit test for simple App.
