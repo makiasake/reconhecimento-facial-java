@@ -1,4 +1,4 @@
-package com.makiasake.reconhecimento_facial.reconhecimento;
+package com.makiasake.reconhecimento_facial;
 
 import static org.bytedeco.opencv.global.opencv_imgcodecs.imwrite;
 import static org.bytedeco.opencv.global.opencv_imgproc.COLOR_BGRA2GRAY;
@@ -75,8 +75,8 @@ public class Captura {
 				if (tecla != null) {
 					if (tecla.getKeyChar() == 'q') {
 						if (amostra <= numeroAmostras) {
-							imwrite("src\\fotos\\pessoa." + idPessoa + "." + amostra + ".jpg", faceCapturada);
-							System.out.println("Foto " + amostra + "capturada\n");
+							imwrite("fotos/pessoa." + idPessoa + "." + amostra + ".jpg", faceCapturada);
+							System.out.println("Foto " + amostra + " capturada\n");
 							amostra++;
 						}
 					}

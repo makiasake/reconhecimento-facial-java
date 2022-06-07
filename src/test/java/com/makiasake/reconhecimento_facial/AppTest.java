@@ -6,8 +6,6 @@ import org.bytedeco.opencv.opencv_face.EigenFaceRecognizer;
 import org.bytedeco.opencv.opencv_face.FaceRecognizer;
 import org.junit.Test;
 
-import com.makiasake.reconhecimento_facial.reconhecimento.Captura;
-
 /**
  * Unit test for simple App.
  */
@@ -29,10 +27,20 @@ public class AppTest {
 	public void testCaptura() {
 		Captura captura = new Captura();
 		try {
-			captura.capture();	
+//			captura.capture();	
 		} catch (Exception e) {
 			System.out.println("Erro");
+		}		
+	}
+	
+	@Test
+	public void testTreinamento() {
+		Treinamento treinamento = new Treinamento();
+		try {
+			treinamento.run();
+		} catch (Exception e) {
+			System.out.println("Erro");
+			e.printStackTrace();
 		}
-		
 	}
 }
