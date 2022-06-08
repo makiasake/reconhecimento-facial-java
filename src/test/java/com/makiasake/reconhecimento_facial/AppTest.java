@@ -5,6 +5,7 @@ import static org.junit.Assert.assertTrue;
 import org.bytedeco.opencv.opencv_face.EigenFaceRecognizer;
 import org.bytedeco.opencv.opencv_face.FaceRecognizer;
 import org.bytedeco.opencv.opencv_face.FisherFaceRecognizer;
+import org.bytedeco.opencv.opencv_face.LBPHFaceRecognizer;
 import org.junit.Ignore;
 import org.junit.Test;
 
@@ -63,6 +64,7 @@ public class AppTest {
 	}
 
 	@Test
+	@Ignore
 	public void testReconhecimentoFisher() {
 		Reconhecimento reconhecimento = new Reconhecimento();
 		try {
@@ -72,5 +74,15 @@ public class AppTest {
 			e.printStackTrace();
 		}
 	}
-	
+
+	@Test
+	public void testReconhecimentoLBPH() {
+		Reconhecimento reconhecimento = new Reconhecimento();
+		try {
+			reconhecimento.run(LBPHFaceRecognizer.create(), "recursos/classificadorLBPH.yml");
+		} catch (Exception e) {
+			System.out.println("Erro");
+			e.printStackTrace();
+		}
+	}
 }

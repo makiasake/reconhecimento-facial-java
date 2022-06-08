@@ -1,11 +1,11 @@
 package com.makiasake.reconhecimento_facial;
 
 import static org.bytedeco.opencv.global.opencv_imgproc.COLOR_BGRA2GRAY;
+import static org.bytedeco.opencv.global.opencv_imgproc.FONT_HERSHEY_PLAIN;
 import static org.bytedeco.opencv.global.opencv_imgproc.cvtColor;
 import static org.bytedeco.opencv.global.opencv_imgproc.putText;
 import static org.bytedeco.opencv.global.opencv_imgproc.rectangle;
 import static org.bytedeco.opencv.global.opencv_imgproc.resize;
-import static org.bytedeco.opencv.global.opencv_imgproc.FONT_HERSHEY_PLAIN;
 
 import org.bytedeco.javacpp.DoublePointer;
 import org.bytedeco.javacpp.IntPointer;
@@ -19,7 +19,6 @@ import org.bytedeco.opencv.opencv_core.Rect;
 import org.bytedeco.opencv.opencv_core.RectVector;
 import org.bytedeco.opencv.opencv_core.Scalar;
 import org.bytedeco.opencv.opencv_core.Size;
-import org.bytedeco.opencv.opencv_face.EigenFaceRecognizer;
 import org.bytedeco.opencv.opencv_face.FaceRecognizer;
 import org.bytedeco.opencv.opencv_objdetect.CascadeClassifier;
 
