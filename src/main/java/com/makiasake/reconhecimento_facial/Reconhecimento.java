@@ -25,7 +25,7 @@ import org.bytedeco.opencv.opencv_objdetect.CascadeClassifier;
 
 public class Reconhecimento {
 
-	public void run() throws Exception {
+	public void run(FaceRecognizer reconhecedor, String classificatorFile) throws Exception {
 		OpenCVFrameConverter.ToMat convertedMat = new OpenCVFrameConverter.ToMat();
 
 		OpenCVFrameGrabber camera = new OpenCVFrameGrabber(0);
@@ -34,8 +34,9 @@ public class Reconhecimento {
 		CascadeClassifier detectorFace = new CascadeClassifier("haarcascade_frontalface_alt.xml");
 		CanvasFrame canvas = new CanvasFrame("Reconhecimento", CanvasFrame.getDefaultGamma() / camera.getGamma());
 
-		FaceRecognizer reconhecedor = EigenFaceRecognizer.create();
-		reconhecedor.read("recursos/classificadorEigenFaces.yml");
+//		FaceRecognizer reconhecedor = EigenFaceRecognizer.create();
+		
+		reconhecedor.read(classificatorFile);
 
 		// posição de acordo com a ordem das fotos
 		String[] pessoas = { "", "Alexandre", "Rapthalia" };

@@ -4,6 +4,7 @@ import static org.junit.Assert.assertTrue;
 
 import org.bytedeco.opencv.opencv_face.EigenFaceRecognizer;
 import org.bytedeco.opencv.opencv_face.FaceRecognizer;
+import org.bytedeco.opencv.opencv_face.FisherFaceRecognizer;
 import org.junit.Ignore;
 import org.junit.Test;
 
@@ -50,13 +51,26 @@ public class AppTest {
 	}
 	
 	@Test
-	public void testReconhecimento() {
+	@Ignore
+	public void testReconhecimentoEigen() {
 		Reconhecimento reconhecimento = new Reconhecimento();
 		try {
-			reconhecimento.run();
+			reconhecimento.run(EigenFaceRecognizer.create(), "recursos/classificadorEigenFaces.yml");
 		} catch (Exception e) {
 			System.out.println("Erro");
 			e.printStackTrace();
 		}
 	}
+
+	@Test
+	public void testReconhecimentoFisher() {
+		Reconhecimento reconhecimento = new Reconhecimento();
+		try {
+			reconhecimento.run(FisherFaceRecognizer.create(), "recursos/classificadorFisherFaces.yml");
+		} catch (Exception e) {
+			System.out.println("Erro");
+			e.printStackTrace();
+		}
+	}
+	
 }
