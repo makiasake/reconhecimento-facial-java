@@ -33,8 +33,6 @@ public class Reconhecimento {
 		CascadeClassifier detectorFace = new CascadeClassifier("haarcascade_frontalface_alt.xml");
 		CanvasFrame canvas = new CanvasFrame("Reconhecimento", CanvasFrame.getDefaultGamma() / camera.getGamma());
 
-//		FaceRecognizer reconhecedor = EigenFaceRecognizer.create();
-		
 		reconhecedor.read(classificatorFile);
 
 		// posição de acordo com a ordem das fotos

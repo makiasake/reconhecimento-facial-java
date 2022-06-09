@@ -13,3 +13,5 @@ buildNumber.properties
 *.classpath
 fotos/
 recursos/
+.settings/org.eclipse.jdt.core.prefs
+.classpath
