@@ -24,12 +24,6 @@ public class AppTest {
 
 	@Test
 	@Ignore
-	public void createEigenFaceRecognizer() {
-		FaceRecognizer eigenFaceRecognizer = EigenFaceRecognizer.create();
-	}
-
-	@Test
-	@Ignore
 	public void testCaptura() {
 		Captura captura = new Captura();
 		try {
@@ -80,6 +74,17 @@ public class AppTest {
 		Reconhecimento reconhecimento = new Reconhecimento();
 		try {
 			reconhecimento.run(LBPHFaceRecognizer.create(), "recursos/classificadorLBPH.yml");
+		} catch (Exception e) {
+			System.out.println("Erro");
+			e.printStackTrace();
+		}
+	}
+	
+	@Test
+	public void testRecognizer() {
+		Teste teste = new Teste();
+		try {
+			teste.run(LBPHFaceRecognizer.create(), "recursos/classificadorLBPH.yml", "teste");
 		} catch (Exception e) {
 			System.out.println("Erro");
 			e.printStackTrace();
