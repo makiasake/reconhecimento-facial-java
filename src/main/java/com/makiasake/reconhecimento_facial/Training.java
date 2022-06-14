@@ -48,8 +48,8 @@ public class Training {
 
 			// Please find a better name that is not class
 			int kind = Integer.parseInt(picture.getName().split("\\.")[1]); // because the filename is:
-																			// pessoa.id.imagenumber.jpg. E.g:
-																			// pessoa.1.1.jpg
+																			// person.id.imagenumber.jpg. E.g:
+																			// person.1.1.jpg
 
 			resize(pictureGrayScale, pictureGrayScale, new Size(160, 160));
 			picturesVector.put(counter, pictureGrayScale);

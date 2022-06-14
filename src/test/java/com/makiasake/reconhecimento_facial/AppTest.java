@@ -17,17 +17,17 @@ import com.makiasake.reconhecimento_facial.auxilary_objects.RecognizerConfigurat
 public class AppTest {
 
 	@Test
-	@Ignore
 	public void testCaptura() {
-		Captura captura = new Captura();
+		Capture captura = new Capture();
 		try {
-			captura.capture();	
+			captura.run();	
 		} catch (Exception e) {
 			System.out.println("Erro");
 		}		
 	}
 	
 	@Test
+	@Ignore
 	public void testTreinamento() {
 		
 		// yalefaces
@@ -36,11 +36,11 @@ public class AppTest {
 		// FaceRecognizer lbph = LBPHFaceRecognizer.create(12, 10, 15, 15, 0);
 		
 		RecognizerConfiguration eugen = new RecognizerConfiguration(EigenFaceRecognizer.create(),
-				Paths.get("recursos/classificadorEigenFaces.yml"));
+				Paths.get("resources/classifiers/classificadorEigenFaces.yml"));
 		RecognizerConfiguration fisher = new RecognizerConfiguration(FisherFaceRecognizer.create(),
-				Paths.get("recursos/classificadorFisherFaces.yml"));
+				Paths.get("resources/classifiers/classificadorFisherFaces.yml"));
 		RecognizerConfiguration lbph = new RecognizerConfiguration(LBPHFaceRecognizer.create(2, 9, 9, 9, 1),
-				Paths.get("recursos/classificadorLBPH.yml"));
+				Paths.get("resources/classifiers/classificadorLBPH.yml"));
 		
 		Training treinamento = new Training(Arrays.asList(eugen, fisher, lbph), Paths.get("fotos"));
 		try {
@@ -56,7 +56,7 @@ public class AppTest {
 	public void testReconhecimentoEigen() {
 		Reconhecimento reconhecimento = new Reconhecimento();
 		try {
-			reconhecimento.run(EigenFaceRecognizer.create(), "recursos/classificadorEigenFaces.yml");
+			reconhecimento.run(EigenFaceRecognizer.create(), "resources/classifiers/classificadorEigenFaces.yml");
 		} catch (Exception e) {
 			System.out.println("Erro");
 			e.printStackTrace();
@@ -68,7 +68,7 @@ public class AppTest {
 	public void testReconhecimentoFisher() {
 		Reconhecimento reconhecimento = new Reconhecimento();
 		try {
-			reconhecimento.run(FisherFaceRecognizer.create(), "recursos/classificadorFisherFaces.yml");
+			reconhecimento.run(FisherFaceRecognizer.create(), "resources/classifiers/classificadorFisherFaces.yml");
 		} catch (Exception e) {
 			System.out.println("Erro");
 			e.printStackTrace();
@@ -80,7 +80,7 @@ public class AppTest {
 	public void testReconhecimentoLBPH() {
 		Reconhecimento reconhecimento = new Reconhecimento();
 		try {
-			reconhecimento.run(LBPHFaceRecognizer.create(), "recursos/classificadorLBPH.yml");
+			reconhecimento.run(LBPHFaceRecognizer.create(), "resources/classifiers/classificadorLBPH.yml");
 		} catch (Exception e) {
 			System.out.println("Erro");
 			e.printStackTrace();
@@ -92,7 +92,7 @@ public class AppTest {
 	public void testRecognizer() {
 		Teste teste = new Teste();
 		try {
-			teste.run(LBPHFaceRecognizer.create(), "recursos/classificadorLBPH.yml", "teste");
+			teste.run(LBPHFaceRecognizer.create(), "resources/classifiers/classificadorLBPH.yml", "teste");
 		} catch (Exception e) {
 			System.out.println("Erro");
 			e.printStackTrace();
