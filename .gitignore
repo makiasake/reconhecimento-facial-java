@@ -12,6 +12,6 @@ buildNumber.properties
 *.log
 *.classpath
 pictures/
-resources/
+resources/classifiers/
 .settings/org.eclipse.jdt.core.prefs
 .classpath
